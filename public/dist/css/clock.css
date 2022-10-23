@@ -1,0 +1,13 @@
+#clock {
+    width: 640px;
+    height: 480px;
+    border: 1px solid blue;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color:rgb(26, 22, 22);   
+    color: chartreuse;
+    font-size: 180px; 
+    text-align: center;
+    line-height: 480px;
+}
