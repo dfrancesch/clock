@@ -6,13 +6,13 @@ Clock
 
 function setTime( time ) {
     var settings = {
-        "url": "http://localhost:8000/api/v1/time/" + time,
+        "url": window.location.origin + "/api/v1/time/" + time,
         "method": "GET",
         "timeout": 0,
         "headers": {
         },
     };
-      
+    
     $.ajax(settings).done(function (response) {
         console.log(response);
         if ( response.length == 0 ) {
