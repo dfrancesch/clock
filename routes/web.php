@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Api\TimeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/list', [TimeController::class, 'getList'] )->name('time_list');
+Route::get('/hour/{hr}', [TimeController::class, 'getHour'] )->name('hour_list');
+Route::get('/minute/{hr}/{mi}', [TimeController::class, 'getMinute'] )->name('minute_list');
