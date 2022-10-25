@@ -18,10 +18,25 @@ td {
     padding: 4px;
     width: 16.66%;
 }
+h1 {
+    text-align: center;
+}
 </style>
 </head>
 <body>
-    <h1>Minutes for {{ $hour }}</h1>
+    <h1>
+        @if ( $hour > 0 )
+            <a href="{{ '/hour/'.($hour-1) }}">&lt;&lt;</a>
+        @else
+            &lt;&lt;
+        @endif 
+        Minutes for {{ $hour }}
+        @if ( $hour < 23 )
+            <a href="{{ '/hour/'.($hour+1) }}">&gt;&gt;</a>
+        @else
+            &gt;&gt;
+        @endif 
+    </h1>
     <table>
         <?php
             for ($t = 0; $t<20; $t++) {
@@ -53,5 +68,7 @@ td {
             }
         ?>
     </table>
+
+    <h1><a href="/list">&lt; Back &lt;</a></h1>
 </body>
 </html>
