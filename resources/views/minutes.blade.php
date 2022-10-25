@@ -44,21 +44,21 @@ h1 {
             <tr>
                 <td>
                     @if ( isset($minutes[$t]) )
-                        <a href="{{ '/minute/'.$hour.'/'.$t }}">{{$t}}</a> </td><td>{{ $minutes[$t] }}
+                        <a href="{{ '/minute/'.$hour.'/'.$t }}"><b>{{$t}}</b></a> </td><td><b>{{ $minutes[$t] }}</b>
                     @else
                         {{ $t }} </td><td>0
                     @endif
                 </td>
                 <td>
                     @if ( isset($minutes[$t+20]) )
-                        <a href="{{ '/minute/'.$hour.'/'.($t+20) }}">{{$t+20}}</a> </td><td>{{ $minutes[$t+20] }}
+                        <a href="{{ '/minute/'.$hour.'/'.($t+20) }}"><b>{{$t+20}}</b></a> </td><td><b>{{ $minutes[$t+20] }}</b>
                     @else
                         {{ $t+20 }} </td><td>0
                     @endif
                 </td>
                 <td>
                     @if ( isset($minutes[$t+40]) )
-                        <a href="{{ '/minute/'.$hour.'/'.($t+40) }}">{{$t+40}}</a> </td><td>{{ $minutes[$t+40] }}
+                        <a href="{{ '/minute/'.$hour.'/'.($t+40) }}"><b>{{$t+40}}</b></a> </td><td><b>{{ $minutes[$t+40] }}</b>
                     @else
                         {{ $t+40 }} </td><td>0
                     @endif

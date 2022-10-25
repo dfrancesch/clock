@@ -29,14 +29,14 @@ td {
             <tr>
                 <td>
                     @if ( isset($hours[$t]) )
-                        <a href="{{ '/hour/'.$t }}">{{$t}}</a> </td><td>{{ $hours[$t] }}
+                        <a href="{{ '/hour/'.$t }}"><b>{{$t}}</b></a> </td><td><b>{{ $hours[$t] }}</b>
                     @else
                         {{ $t }} </td><td>0
                     @endif
                 </td>
                 <td>
                     @if ( isset($hours[$t+12]) )
-                        <a href="{{ '/hour/'.($t+12) }}">{{$t+12}}</a> </td><td>{{ $hours[$t+12] }}
+                        <a href="{{ '/hour/'.($t+12) }}"><b>{{$t+12}}</b></a> </td><td><b>{{ $hours[$t+12] }}</b>
                     @else
                         {{ $t+12 }} </td><td>0
                     @endif
