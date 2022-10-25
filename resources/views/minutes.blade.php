@@ -30,7 +30,7 @@ h1 {
         @else
             &lt;&lt;
         @endif 
-        Minutes for {{ $hour }}
+        Hour {{ $hour }}
         @if ( $hour < 23 )
             <a href="{{ '/hour/'.($hour+1) }}">&gt;&gt;</a>
         @else
