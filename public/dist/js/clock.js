@@ -22,12 +22,13 @@ function setTime( time ) {
 
             $('#clock-detail').text("");
         } else {
-            $('#clock').css("background-image", "url(" + response[0].picture + ")");
+            pos = Math.floor( Math.random()* response.length );
+            $('#clock').css("background-image", "url(" + response[pos].picture + ")");
             $('#clock').text('');
 
-            txt = '<span class="user">'+response[0].user.nick_name + " from " + response[0].country + '</span>';
+            txt = '<span class="user">'+response[pos].user.nick_name + " from " + response[pos].country + '</span>';
             txt += '<br>';
-            txt += response[0].description;
+            txt += response[pos].description;
             $('#clock-detail').html(txt);
 
         }

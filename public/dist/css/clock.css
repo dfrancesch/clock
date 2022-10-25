@@ -1,10 +1,7 @@
-div {
-    border: 1px solid blue;
-
-}
 #clock {
-    width: 640px;
-    height: 480px;
+    max-width: 640px;
+    width: 100%;
+    aspect-ratio : 4 / 3;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -15,7 +12,8 @@ div {
     line-height: 480px;
 }
 #clock-detail {
-    width: 640px;
+    max-width: 640px;
+    width: 100%;
 
 }
 .user {
