@@ -1,7 +1,10 @@
+div {
+    border: 1px solid blue;
+
+}
 #clock {
     width: 640px;
     height: 480px;
-    border: 1px solid blue;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -10,4 +13,12 @@
     font-size: 180px; 
     text-align: center;
     line-height: 480px;
+}
+#clock-detail {
+    width: 640px;
+
+}
+.user {
+    font-size: 1.2em;
+    font-weight: 500;
 }

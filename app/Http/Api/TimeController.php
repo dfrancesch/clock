@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class TimeController {
 
+    public function home( $time = null ) {
+        Log::debug(__METHOD__ . ' - Time : ' . ($time)?:'null' );
+
+        return view('home', [ 'time' => $time ]);
+    }
+
     public function get( $time ) {
         Log::debug(__METHOD__ . ' - Time : ' . $time );
 
@@ -26,6 +32,7 @@ class TimeController {
                 'user' => [
                     'nick_name' => $t->user->nick_name,
                 ],
+                'country' => $t->country->name,
                 'description' => $t->description,
             ];
 

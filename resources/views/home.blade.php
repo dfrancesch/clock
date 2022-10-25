@@ -20,5 +20,19 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="/dist/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+@if (isset($time))
+<script>
+    $(document).ready( function () {
+        setTime('{{ $time }}');
+    });
+</script>
+@else
+<script>
+    $(document).ready( function () {
+        clockOn();
+    });
+</script>    
+@endif
 </body>
 </html>

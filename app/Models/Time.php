@@ -18,4 +18,9 @@ class Time extends Model {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_code', 'code');
+    }
+
 }
