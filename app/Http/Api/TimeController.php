@@ -68,6 +68,8 @@ class TimeController {
 
         Log::debug(__METHOD__ . ' - Hour : ' . $hr );
 
+        $hr = substr('0'.$hr,-2);
+        
         $query = "select substring(t.`time`,3,2) as mi, count(1) as q
                 from times t  
                 where substring(t.`time`,1,2) = ?
