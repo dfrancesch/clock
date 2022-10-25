@@ -1,0 +1,29 @@
+body {
+    font-size: 20px;
+}
+.miss {
+    color: red;
+}
+
+.hours {
+    width: 100%;
+}
+.hours td {
+    text-align: right;
+    border: 1px solid black;
+    padding: 4px;
+    width: 25%;
+}
+.minutes {
+    width: 100%;
+}
+.minutes td {
+    text-align: right;
+    border: 1px solid black;
+    padding: 4px;
+    width: 16.66%;
+}
+
+.h1-minutes {
+    text-align: center;
+}

@@ -5,46 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<style>
-body {
-    font-size: 20px;
-}
-table {
-    width: 100%;
-}
-td {
-    text-align: right;
-    border: 1px solid black;
-    padding: 4px;
-    width: 25%;
-}
-</style>
+    <link href="/dist/css/admin.css" rel="stylesheet">
+    
 </head>
 <body>
     <h1>Hours</h1>
-    <table>
-        <?php
-            for ($t = 0; $t<12; $t++) {
-        ?>
+    <table class="hours">
+        @for ($t = 0; $t<12; $t++) 
             <tr>
+                @for ( $c = 0; $c<2; $c++)
                 <td>
-                    @if ( isset($hours[$t]) )
-                        <a href="{{ '/hour/'.$t }}"><b>{{$t}}</b></a> </td><td><b>{{ $hours[$t] }}</b>
+                    <?php $h = $t + $c * 12; ?>
+                    @if ( isset($hours[$h]) )
+                        <a href="{{ '/hour/'.$h }}"><b>{{$h}}</b></a> </td><td><b>{{ $hours[$h] }}</b>
                     @else
-                        {{ $t }} </td><td>0
+                        <span class="miss">{{ $h }}</span></td><td>0
                     @endif
                 </td>
-                <td>
-                    @if ( isset($hours[$t+12]) )
-                        <a href="{{ '/hour/'.($t+12) }}"><b>{{$t+12}}</b></a> </td><td><b>{{ $hours[$t+12] }}</b>
-                    @else
-                        {{ $t+12 }} </td><td>0
-                    @endif
-                </td>
+                @endfor
             </tr>
-        <?php
-            }
-        ?>
+        @endfor
     </table>
 </body>
 </html>
