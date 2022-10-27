@@ -1,3 +1,8 @@
+body {
+    background-image: url("/images/brick-wall.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #clock {
     max-width: 640px;
     width: 100%;
@@ -11,12 +16,17 @@
     text-align: center;
     line-height: 480px;
 }
+.clock-container {
+    display: flex;
+    justify-content: center;
+}
 #clock-detail {
     max-width: 640px;
     width: 100%;
-
 }
 .user {
     font-size: 1.2em;
     font-weight: 500;
+}
+.bb {
 }

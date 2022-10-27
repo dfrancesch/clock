@@ -14,27 +14,41 @@
     <script src="/dist/js/clock.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-    <h1>Address Clock</h1>
-    <div id="clock"></div>
-    <div id="clock-detail"></div>
+    <div class="container bb ">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-8 col-md-12 bb">
+                <div class="card" >
+                    <div class="card-body">
+                        <h1>Address Clock</h1>
+                    </div>
+                  </div>
+                <div class="clock-container">
+                <div id="clock" class="card bb"></div> 
+                </div>
+                <!-- <img id="clock_img" src="/storage/times/1949-2.jpg" class="rounded mx-auto d-block" style="width: 100%;" alt="..."> -->
+                <div class="card" >
+                    <div class="card-body" id="clock-detail">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="/dist/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-@if (isset($time))
-<script>
-    $(document).ready( function () {
-        setTime('{{ $time }}');
-    });
-</script>
-@else
-<script>
-    $(document).ready( function () {
-        clockOn();
-    });
-</script>    
-@endif
-    </div>
+    @if (isset($time))
+    <script>
+        $(document).ready( function () {
+            setTime('{{ $time }}');
+        });
+    </script>
+    @else
+    <script>
+        $(document).ready( function () {
+            clockOn();
+        });
+    </script>    
+    @endif
 </body>
 </html>
