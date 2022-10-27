@@ -19,9 +19,19 @@
             <div class="col-lg-8 col-md-12 bb">
                 <div class="card" >
                     <div class="card-body">
-                        <h1>Address Clock</h1>
+                        <div class="row">
+                            <div class="col-6">
+                                <h1>Address Clock</h1>
+                            </div>
+                            <div class="col-6 text-end">
+                                <?php
+                                    $q = App\Http\Controllers\TimeController::getCount();
+                                ?>  
+                                <p>Pictures: {{ $q }} of 1440<br>% {{ sprintf("%2.2f", ( $q / 1440 * 100 )) }}</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                </div>
                 <div class="clock-container">
                 <div id="clock" class="card bb"></div> 
                 </div>

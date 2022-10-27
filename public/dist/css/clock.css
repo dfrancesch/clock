@@ -1,7 +1,12 @@
-body {
-    background-image: url("/images/brick-wall.jpg");
-    background-repeat: no-repeat;
+html { 
+    background: url("/images/brick-wall.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+  }
+body {
+    background-color: transparent;
 }
 #clock {
     max-width: 640px;
@@ -12,7 +17,7 @@ body {
     background-size: cover; /* Resize the background image to cover the entire container */
     background-color:rgb(26, 22, 22);   
     color: chartreuse;
-    font-size: 180px; 
+    font-size: 170px; 
     text-align: center;
     line-height: 480px;
 }
@@ -29,4 +34,9 @@ body {
     font-weight: 500;
 }
 .bb {
+}
+@media ( max-width: 600px ) {
+    #clock {
+        font-size: 100px; 
+    }
 }

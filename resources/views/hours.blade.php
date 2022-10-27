@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="/dist/css/admin.css" rel="stylesheet">
-    
 </head>
 <body>
     <h1>Hours</h1>
