@@ -6,6 +6,7 @@ use App\Http\Api\TimeController;
 use App\Models\Time;
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class TimeLocation extends Command
@@ -59,6 +60,9 @@ class TimeLocation extends Command
 
                 $t->save();
             } catch ( Exception $e ) {
+                Log::error( __METHOD__ . ' - '. $t->time . ' - Error: '. $e->getMessage() );
+                Log::error( __METHOD__ . ' - '. $file );
+
                 $this->error( $t->time . ' - Error: '. $e->getMessage() );
             }
 
