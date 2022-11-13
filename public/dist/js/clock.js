@@ -31,7 +31,7 @@ function setTime( time ) {
     $.ajax(settings).done(function (response) {
         console.log(response);
 
-        url = "https://www.openstreetmap.org/export/embed.html?bbox=-58.758659362792976%2C-34.740201893120535%2C-58.18531036376954%2C-34.502595661280765&amp;layer=mapnik";
+        url = "https://www.openstreetmap.org/export/embed.html?bbox=-58.57378005981446%2C-34.67627620475045%2C-58.28710556030274%2C-34.55746648318898&amp;layer=mapnik";
 
         if ( response.length == 0 ) {
             $('#clock').css("background-image", "");

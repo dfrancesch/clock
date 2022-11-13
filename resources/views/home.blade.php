@@ -44,7 +44,7 @@
                 <div class="card" >
                     <div class="card-body" >
                         <iframe id="mapframe" class="mapframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.495287895202644%2C-34.582487595551444%2C-58.486329317092896%2C-34.57777312540688&amp;layer=mapnik&amp;marker=-34.57963038122867%2C-58.490808606147766" style="border: 1px solid black"></iframe>
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.57378005981446%2C-34.67627620475045%2C-58.28710556030274%2C-34.55746648318898&amp;layer=mapnik" style="border: 1px solid black"></iframe>
                     </div>
                 </div>
             </div>
