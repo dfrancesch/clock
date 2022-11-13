@@ -67,6 +67,29 @@ class TimeController {
         return view('hours', [ 'hours' => $hours ]);
     }
 
+    public function getAlbum() {
+
+        Log::debug(__METHOD__ . ' - start' );
+
+        $query = "select t.time as tm, count(distinct t.`time`) as q
+                from times t  
+                group by t.time
+                order by 1";
+
+        $rows = DB::select($query);
+
+        $hours = [];
+        
+        foreach ( $rows as $r ) {
+            $hours[$r->tm] = $r->q;
+        }
+
+        Log::debug(__METHOD__ . "Hours:" . print_r($hours,true));
+
+        return view('album', [ 'hours' => $hours ]);
+
+    }
+
     public function getHour( $hr ) {
 
         Log::debug(__METHOD__ . ' - Hour : ' . $hr );

@@ -40,3 +40,9 @@ body {
         font-size: 100px; 
     }
 }
+.mapframe {
+    max-width: 640px;
+    width: 100%;
+    aspect-ratio : 4 / 3;
+
+}

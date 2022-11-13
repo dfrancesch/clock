@@ -27,3 +27,26 @@ body {
 .h1-minutes {
     text-align: center;
 }
+.album {
+    width: 100%;
+
+}
+.album td {
+    text-align: right;
+    border: 1px solid black;
+    padding: 4px;
+    width: 4.16%;
+}
+.red {
+    background-color: rgb(255, 148, 148);
+}
+.green {
+    background-color: rgb(128, 238, 128);
+}
+.head {
+    width: 100%;
+
+}
+.head td {
+    padding: 0px;
+}

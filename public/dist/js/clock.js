@@ -30,13 +30,15 @@ function setTime( time ) {
 
     $.ajax(settings).done(function (response) {
         console.log(response);
+
+        url = "https://www.openstreetmap.org/export/embed.html?bbox=-58.758659362792976%2C-34.740201893120535%2C-58.18531036376954%2C-34.502595661280765&amp;layer=mapnik";
+
         if ( response.length == 0 ) {
             $('#clock').css("background-image", "");
             cl = Math.floor(Math.random() * colors.length );
             $('#clock').css("color", colors[cl]);
             show_time = time.substr(0,2)+':'+time.substr(-2);
             $('#clock').text(show_time);
-
 
             $('#clock-detail').text("Automatically Generated Image Time");
         } else {
@@ -47,9 +49,20 @@ function setTime( time ) {
             txt = '<span class="user">'+response[pos].user.nick_name + " from " + response[pos].country + '</span>';
             txt += '<br>';
             txt += response[pos].description;
+
+            lat = response[pos].latitude * 1.0;
+            long = response[pos].longitude * 1.0;
+
+            url = "https://www.openstreetmap.org/export/embed.html?bbox=" + (long - 0.002) + ','+ (lat - 0.001) + ',' + (long + 0.002) + ','+ (lat + 0.001) + '&layer=mapnik&marker=' + lat + ',' + long ;
+
             $('#clock-detail').html(txt);
 
         }
+
+        mf = $('#mapframe');
+
+        mf.attr('src', url);
+
     });
   
 }

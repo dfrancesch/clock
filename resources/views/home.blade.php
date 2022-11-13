@@ -16,7 +16,7 @@
 <body>
     <div class="container bb ">
         <div class="row justify-content-md-center">
-            <div class="col-lg-8 col-md-12 bb">
+            <div class="col-lg-12 col-md-12 bb">
                 <div class="card" >
                     <div class="card-body">
                         <div class="row">
@@ -32,16 +32,30 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-md-12 bb">
                 <div class="clock-container">
-                <div id="clock" class="card bb"></div> 
+                    <div id="clock" class="card bb"></div> 
                 </div>
-                <!-- <img id="clock_img" src="/storage/times/1949-2.jpg" class="rounded mx-auto d-block" style="width: 100%;" alt="..."> -->
+            </div>
+            <div class="col-lg-6 col-md-12 bb">
+                <div class="card" >
+                    <div class="card-body" >
+                        <iframe id="mapframe" class="mapframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.495287895202644%2C-34.582487595551444%2C-58.486329317092896%2C-34.57777312540688&amp;layer=mapnik&amp;marker=-34.57963038122867%2C-58.490808606147766" style="border: 1px solid black"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-lg-12 col-md-12 bb">
                 <div class="card" >
                     <div class="card-body" id="clock-detail">
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 
     <!-- JavaScript Bundle with Popper -->
