@@ -15,27 +15,26 @@
 </head>
 <body>
     <div class="container bb ">
-        <div class="row justify-content-md-center">
-            <div class="col-lg-12 col-md-12 bb">
-                <div class="card" >
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6">
-                                <h1>Address Clock</h1>
-                            </div>
-                            <div class="col-6 text-end">
-                                <?php
-                                    $q = App\Http\Controllers\TimeController::getCount();
-                                ?>  
-                                <p>Pictures: {{ $q }} of 1440<br>% {{ sprintf("%2.2f", ( $q / 1440 * 100 )) }}</p>
-                            </div>
-                        </div>
+        <nav class="navbar fixed-top navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Address Clock</a>
+                {{-- 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link disabled">Disabled</a>
                     </div>
                 </div>
+                --}}
             </div>
-        </div>
+        </nav>
         <div class="row justify-content-md-center">
-            <div class="col-lg-6 col-md-12 bb">
+            <div class="col-lg-6 col-md-12">
                 <div class="clock-container">
                     <div id="clock" class="card bb"></div> 
                 </div>
@@ -49,13 +48,26 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-md-center">
+        <div class="row">
             <div class="col-lg-12 col-md-12 bb">
                 <div class="card" >
-                    <div class="card-body" id="clock-detail">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-12">
+                                <div id="clock-detail">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-12 text-end">
+                                <?php
+                                    $q = App\Http\Controllers\TimeController::getCount();
+                                ?>
+                                Pictures: {{ $q }} of 1440<br>% {{ sprintf("%2.2f", ( $q / 1440 * 100 )) }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 
     <!-- JavaScript Bundle with Popper -->
