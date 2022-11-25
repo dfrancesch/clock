@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Album</title>
     <link href="/dist/css/admin.css" rel="stylesheet">
+<style>
+a {
+    text-decoration: none;
+    color: black;
+}
+</style>
 </head>
 <body>
     <table class="head"><tr><td>

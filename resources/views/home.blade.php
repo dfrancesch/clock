@@ -8,9 +8,16 @@
 
     <!-- Bootstrap 5.2.2 -->
     <link href="/dist/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
     <link href="/dist/css/clock.css" rel="stylesheet">
 
     <script src="/dist/js/jquery-3.6.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
+
     <script src="/dist/js/clock.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -42,8 +49,7 @@
             <div class="col-lg-6 col-md-12 bb">
                 <div class="card" >
                     <div class="card-body" >
-                        <iframe id="mapframe" class="mapframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=-58.57378005981446%2C-34.67627620475045%2C-58.28710556030274%2C-34.55746648318898&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+                        <div id="map" class="mapframe"></div>
                     </div>
                 </div>
             </div>
@@ -86,5 +92,17 @@
         });
     </script>    
     @endif
+
+    <script>
+
+        const map = L.map('map').setView([-34.61, -58.449], 12);
+    
+        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+    </script>
+    
 </body>
 </html>

@@ -2,8 +2,6 @@
 Clock
 */
 
-// const { get } = require("lodash");
-
 colors = [
     '#e57575',
     '#c29a1a',
@@ -19,6 +17,9 @@ colors = [
     '#df5017',
     '#e90000',
 ]
+
+var marker = null;
+
 function setTime( time ) {
     var settings = {
         "url": window.location.origin + "/api/v1/time/" + time,
@@ -31,14 +32,19 @@ function setTime( time ) {
     $.ajax(settings).done(function (response) {
         console.log(response);
 
-        url = "https://www.openstreetmap.org/export/embed.html?bbox=-58.57378005981446%2C-34.67627620475045%2C-58.28710556030274%2C-34.55746648318898&amp;layer=mapnik";
-
         if ( response.length == 0 ) {
             $('#clock').css("background-image", "");
             cl = Math.floor(Math.random() * colors.length );
             $('#clock').css("color", colors[cl]);
             show_time = time.substr(0,2)+':'+time.substr(-2);
             $('#clock').text(show_time);
+
+            if (marker) {
+                marker.remove();
+                marker = null;
+            }
+
+            map.setView([-34.6185, -58.4418], 12, { animate: true, duration: 5});
 
             $('#clock-detail').text("Automatically Generated Image Time");
         } else {
@@ -50,21 +56,23 @@ function setTime( time ) {
             txt += '<br>';
             txt += response[pos].description;
 
-            lat = response[pos].latitude * 1.0;
-            long = response[pos].longitude * 1.0;
+            duration = 5;
 
-            url = "https://www.openstreetmap.org/export/embed.html?bbox=" + (long - 0.002) + ','+ (lat - 0.001) + ',' + (long + 0.002) + ','+ (lat + 0.001) + '&layer=mapnik&marker=' + lat + ',' + long ;
+            if (marker) {
+                marker.remove();
+                duration = 3;
+            }
+
+            marker = L.marker([response[pos].latitude, response[pos].longitude]).addTo(map);
+
+            map.setView([response[pos].latitude, response[pos].longitude], 15.5, { animate: true, duration: duration});
 
             $('#clock-detail').html(txt);
 
         }
 
-        mf = $('#mapframe');
-
-        mf.attr('src', url);
-
     });
-  
+
 }
 
 function clockOn() {
