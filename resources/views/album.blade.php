@@ -52,7 +52,13 @@
                             $hh = sprintf("%02d", $h);
                             $mm = sprintf("%02d", $m);
                             if ( isset($hours[$t]) ) {
-                                echo '<td class="green"><b>'.$hh.':'.$mm.'</b></td>';
+                            ?>
+                                <td class="green"><b>
+                                    <a href="{{ '/minute/'.$hh.'/'.$mm }}">
+                                    {{$hh}}:{{$mm}}
+                                    </a>
+                                </b></td>
+                            <?php
                             } else {
                                 echo '<td class="red">'.$hh.':'.$mm.'</td>';
                             }
