@@ -44,7 +44,7 @@ function setTime( time ) {
                 marker = null;
             }
 
-            map.setView([-34.6185, -58.4418], 12, { animate: true, duration: 5});
+            map.flyTo([-34.6185, -58.4418], 12, { duration: 5});
 
             $('#clock-detail').text("Automatically Generated Image Time");
         } else {
@@ -65,7 +65,7 @@ function setTime( time ) {
 
             marker = L.marker([response[pos].latitude, response[pos].longitude]).addTo(map);
 
-            map.setView([response[pos].latitude, response[pos].longitude], 15.5, { animate: true, duration: duration});
+            map.flyTo([response[pos].latitude, response[pos].longitude], 15.5, { duration: duration});
 
             $('#clock-detail').html(txt);
 
