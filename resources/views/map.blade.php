@@ -45,7 +45,9 @@ html, body {
 	}).addTo(map);
 
     gps.forEach(element => {
-        L.marker([element.latitude, element.longitude]).addTo(map).bindPopup(element.time);
+        L.marker([element.latitude, element.longitude])
+            .addTo(map)
+            .bindPopup('<img src="'+element.picture+'" width="100">');
     });
     /*
     var marker = L.marker([-34.61, -58.449]).addTo(map);

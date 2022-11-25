@@ -201,7 +201,11 @@ class TimeController {
             ->toArray();
         
         foreach( $gps as $k => $v ) {
-            $gps[$k][$v['picture']] = Storage::disk('local')->url('times/'.$v['picture']);
+            $file_name = $v['picture'];
+
+            $file_thumb = Storage::disk('local')->url('times/'.pathinfo($file_name, PATHINFO_FILENAME) . '-thumb.' . pathinfo($file_name, PATHINFO_EXTENSION));
+
+            $gps[$k]['picture'] = $file_thumb;
         }
 
         Log::debug(__METHOD__ . ' - list : ' . print_r($gps,true) );
