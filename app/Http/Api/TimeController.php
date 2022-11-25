@@ -190,7 +190,25 @@ class TimeController {
             return false;
         }
     }
-    
+
+    public function getMap( ) {
+        Log::debug(__METHOD__ . ' - start' );
+
+        $gps = Time::select('latitude','longitude', 'picture', 'time')
+            // ->skip(0)
+            // ->take(50)
+            ->get()
+            ->toArray();
+        
+        foreach( $gps as $k => $v ) {
+            $gps[$k][$v['picture']] = Storage::disk('local')->url('times/'.$v['picture']);
+        }
+
+        Log::debug(__METHOD__ . ' - list : ' . print_r($gps,true) );
+
+        return view('map', ['gps' => $gps]);
+    }
+
 
 
 }

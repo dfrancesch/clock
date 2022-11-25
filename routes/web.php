@@ -23,6 +23,7 @@ Route::get('/hour/{hr}', [TimeController::class, 'getHour'] )->name('hour_list')
 Route::get('/minute/{hr}/{mi}', [TimeController::class, 'getMinute'] )->name('minute_list');
 
 Route::get('/album', [TimeController::class, 'getAlbum'] )->name('time_list');
+Route::get('/map', [TimeController::class, 'getMap'] )->name('map');
 
 
 Route::get('/{tm?}', [TimeController::class, 'home'])->name('home');
