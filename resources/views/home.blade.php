@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Clock</title>
 
-    <!-- Bootstrap 5.2.2 -->
-    <link href="/dist/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Bootstrap (local; sin integrity para evitar bloqueo por SRI) -->
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin=""/>
@@ -76,8 +76,8 @@
         </div>
     </div>
 
-    <!-- JavaScript Bundle with Popper -->
-    <script src="/dist/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper (local; sin integrity para evitar bloqueo por SRI) -->
+    <script src="/dist/bootstrap/js/bootstrap.bundle.js"></script>
 
     @if (isset($time))
     <script>

@@ -71,7 +71,7 @@ class TimeController {
 
         Log::debug(__METHOD__ . ' - start' );
 
-        $query = "select t.time as tm, count(distinct t.`time`) as q
+        $query = "select t.time as tm, count(1) as q
                 from times t  
                 group by t.time
                 order by 1";

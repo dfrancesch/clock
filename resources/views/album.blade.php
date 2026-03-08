@@ -21,7 +21,7 @@ a {
         {{ sizeof($hours) }} / 1440
     </td>
     </tr></table>
-    <table class="album">
+    <table class="album" cellspacing="0">
         <thead>
             <tr>
                 <th>00</th>
@@ -59,7 +59,11 @@ a {
                             $mm = sprintf("%02d", $m);
                             if ( isset($hours[$t]) ) {
                             ?>
-                                <td class="green"><b>
+                                <td class="green">
+                                @if ( $hours[$t] > 1 ) 
+                                    <font size="-2">({{$hours[$t]}})</font>&nbsp;
+                                @endif
+                                <b>
                                     <a href="{{ '/minute/'.$hh.'/'.$mm }}">
                                     {{$hh}}:{{$mm}}
                                     </a>
