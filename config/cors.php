@@ -15,11 +15,13 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/v1/time/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => env('APP_ENV') === 'production'
+        ? ['https://clock.criptexedu.com', 'https://clock.francesch.com.ar']
+        : ['*'],
 
     'allowed_origins_patterns' => [],
 

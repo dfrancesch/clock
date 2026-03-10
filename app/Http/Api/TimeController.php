@@ -86,7 +86,7 @@ class TimeController {
 
         Log::debug(__METHOD__ . "Hours:" . print_r($hours,true));
 
-        return view('album', [ 'hours' => $hours ]);
+        return view('admin.album', [ 'hours' => $hours ]);
 
     }
 
@@ -143,7 +143,7 @@ class TimeController {
 
         }
 
-        return view('minute', [ 'hour' => $hr, 'minute' => $mi, 'times' => $list ]);
+        return view('admin.minute', [ 'hour' => $hr, 'minute' => $mi, 'times' => $list ]);
 
     }
 
