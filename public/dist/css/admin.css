@@ -50,3 +50,18 @@ body {
 .head td {
     padding: 0px;
 }
+.album th {
+    font-size: 0.8em;
+}
+.album td {
+    font-size: 0.8em;
+}
+.album th .small {
+    font-size: 0.75em;
+}
+.album td {
+    padding: 1px;
+}
+.album td .small {
+    font-size: 0.7em;
+}

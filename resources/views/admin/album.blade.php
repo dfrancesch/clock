@@ -11,7 +11,7 @@
 </div>
 
 <div class="table-responsive">
-    <table class="table table-bordered table-sm text-center align-middle">
+    <table class="album table table-bordered table-sm text-center align-middle">
         <thead class="table-light">
         <tr>
             @for ($h = 0; $h < 24; $h++)
@@ -40,13 +40,9 @@
                     @if (isset($hours[$t]))
                         <td class="table-success">
                             @if ($hours[$t] > 1)
-                                <span class="small text-muted">({{ $hours[$t] }})</span>&nbsp;
+                                <span class="small text-muted">{{ $hours[$t] }}</span>
                             @endif
-                            <strong>
-                                <a href="{{ route('admin.minute', ['hr' => $hh, 'mi' => $mm]) }}">
-                                    {{ $hh }}:{{ $mm }}
-                                </a>
-                            </strong>
+                            <a href="{{ route('admin.minute', ['hr' => $hh, 'mi' => $mm]) }}">{{ $hh }}:{{ $mm }}</a>
                         </td>
                     @else
                         <td class="table-danger">
