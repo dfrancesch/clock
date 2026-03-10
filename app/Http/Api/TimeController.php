@@ -84,9 +84,21 @@ class TimeController {
             $hours[$r->tm] = $r->q;
         }
 
-        Log::debug(__METHOD__ . "Hours:" . print_r($hours,true));
+        // recupera la cantidad de minutos en una hora!
+        $query = "select SUBSTR(t.time,1,2) as hh, count(distinct t.time) as q
+                from times t  
+                group by SUBSTR(t.time,1,2)";
+        $rows = DB::select($query);
 
-        return view('admin.album', [ 'hours' => $hours ]);
+        $minutes = [];
+        foreach ( $rows as $r ) {
+            $minutes[$r->hh] = $r->q;
+        }
+
+        Log::debug(__METHOD__ . "Hours:" . print_r($hours,true));
+        Log::debug(__METHOD__ . "Minutes:" . print_r($minutes,true));
+
+        return view('admin.album', [ 'hours' => $hours, 'minutes' => $minutes ]);
 
     }
 
